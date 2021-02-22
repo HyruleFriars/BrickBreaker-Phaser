@@ -10,14 +10,21 @@
 </head>
 <body>
     <script>
-        
-        var game = new Phaser.Game(480, 320, Phaser.AUTO, null, {
-          preload: preload, create: create, update: update
-        });
+        var config = {
+            type: Phaser.AUTO,
+            width: 480,
+            height: 320,
+            scene: {
+                preload: preload,
+                create: create,
+                update: update,
+                render: render
+            }   
+        };
 
+        var game = new Phaser.Game(config);
         var ball;
         var paddle;
-
         
         function preload() 
         {
@@ -55,6 +62,10 @@
             paddle.x = game.input.x || game.world.width*0.5;
         }
 
+        function render()
+        {
+
+        }
     </script>
 </body>
 </html>
