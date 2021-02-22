@@ -41,7 +41,6 @@
         {
             this.physics.startSystem(Phaser.Physics.ARCADE);
             ball = this.add.image(this.world.width*0.5, this.world.height-25, 'ball');
-            ball.anchor.set(0.5);
             this.physics.enable(ball, Phaser.physics.arcade);
             ball.body.velocity.set(150, -150);
             ball.body.collideWorldBounds = true;
